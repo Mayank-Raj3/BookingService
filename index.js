@@ -2,10 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const { PORT } = require("./src/config/server-config");
-
+const { DB_SYNC } = require("./src/config/server-config");
 const app = express();
 const apiRoutes = require("./src/routes/index");
-
+const db = require("./src/models/index");
 const prepareAndStartServer = () => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,9 +15,9 @@ const prepareAndStartServer = () => {
 
     app.use("/api", apiRoutes);
 
-    if (process.env.DB_SYNC) {
-      db.sequelize.sync({ alter: true });
-    }
+    // if (process.env.DB_SYNC) {
+    //   db.sequelize.sync({ alter: true });
+    // }
   });
 };
 
