@@ -22,4 +22,3 @@ const prepareAndStartServer = () => {
 };
 
 prepareAndStartServer();
-// s
