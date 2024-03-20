@@ -1,3 +1,5 @@
+// THis we created because we can show incremental changes in our model files
+
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
